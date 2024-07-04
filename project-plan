@@ -1,0 +1,32 @@
+User stories:
+  - As a user, I want to be able to see if the word I entered has matching letters or not.
+  - As a user, I want to be able to see the word of the day if I failed at guessing it correctly.
+  - As a user, I want to be able to see the letters that I have previously chosen.
+
+
+Pseudocode:
+
+//user enters a five letter word
+
+--------------for each letter------------------------------------------------
+//IF the user enters an "acceptable" word
+  //THEN the computer checks the "correctnes" of each letter
+    //IF the letter is in the right position,
+      //THEN the letter's tile will turn green
+    //ELSE IF the letter is correct but not in the right position
+      //THEN the letter's tile will turn yello
+    //ELSE the letter's tile will turn grey
+
+
+----------for the entire word and no. of guesses-------------------------------
+
+//IF the number of correct tiles = 5
+  //THEN display "genius! you guessed the word:) " message
+//ELSE check the number of guesses left
+  //IF the number of guesses is < 6
+      //THEN the user will be allowed to enter a new guess
+ //ELSE the word of the day will be displayed    
+
+    
+
+    
