@@ -1,0 +1,14 @@
+  - html file for game
+    -   screen is split into 2 parts:
+      1) one is for the actual game div
+      2) is for the rules of the games
+      ** i will probably make this an image so that it is easier for me 😄
+
+    - the actual interactive div of the game:
+      - will display a 6 fixed rows that will be displayed at all times
+      - the user will enter the first word in the first row, if the word is incorrect -> the second word he enters is placed in the second row
+      - the task above will be repeated until he guesses the word correctly OR he finishes all of his 6 tries
+
+
+      - in each iteration do not change the whole row,, only change/switch the tiles
+      - 
