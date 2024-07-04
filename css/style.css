@@ -1,0 +1,95 @@
+body{
+    background-color: #f5eeeb;
+}
+
+span{
+    background-color: azure;
+    max-height: 40px;
+}
+
+h1{
+   text-align: center;
+   font-family: 'PT Sans';
+}
+
+.main-container{
+   display: flex;
+   justify-content: space-around; 
+}
+
+.game-play{
+    background-color: lightseagreen;
+    height: 614px;
+    width: 570px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 13px;
+    padding-left: 13px;
+
+}
+
+.words-container{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 614px;
+    width: 570px;
+}
+
+.word-row{
+
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90%;
+    width: 90%;
+    margin: 10px 28px 10px 28px;
+}
+
+.letter-box{
+    padding: 4px;
+    
+    background-color: yellowgreen;
+    width: 13%;
+    height: 12%;
+    border: 3px solid black;
+}
+
+
+.rules{
+    background-color: blue;
+    max-width: 46%;
+    height: 75%;
+}
+
+.rules img{
+    width: 100%;
+    height: 100%;
+}
+
+.pt-sans-regular {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .pt-sans-bold {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .pt-sans-regular-italic {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .pt-sans-bold-italic {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
