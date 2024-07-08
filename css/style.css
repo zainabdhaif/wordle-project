@@ -16,6 +16,10 @@ h1{
 .main-container{
    display: flex;
    justify-content: space-around; 
+   flex-direction: column;
+   margin-right: 50px;
+   margin-left: 70px;
+
 }
 
 .game-play{
@@ -26,10 +30,12 @@ h1{
     padding-bottom: 22px;
     padding-right: 13px;
     padding-left: 13px;
+    margin-right: 100px;
+    margin-left: 360px;
 
 }
 
-.words-container{
+.word-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,7 +44,6 @@ h1{
 }
 
 .word-row{
-
     background-color: #bcc1ba;
     display: flex;
     flex-direction: row;
@@ -61,26 +66,87 @@ h1{
     font-weight: bold;
     text-align: center;
     margin: 7px 7px 4px 7px;
-    color: 373333a;
+
+}
+.keyboard{
+    height: 414px;
+    width: 700px;
+    margin-right: 100px;
+    margin-left: 290px;
+    display: flex;
+    justify-content: space-around; 
+    flex-direction: column;
+}
+.keyboard-first-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.keyboard-second-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.keyboard-last-row{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.letter-key{
+    background-color: #bcc1ba;
+    width: 90px;
+    height: 90px;
+    border: 2px solid blanchedalmond;
+    border-radius: 25px;
+    align-items: center;
+    font-family: 'PT Sans';
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 7px 7px 4px 7px;
 
-
-
-.rules{
-    max-width: 46%;
-    height: 75%;
 }
-
-.rules img{
-    width: 100%;
-    height: 100%;
+.enter-key{
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    border: 2px solid blanchedalmond;
+    border-radius: 25px;
+    align-items: center;
+    font-family: 'PT Sans';
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 7px 7px 4px 7px;
+}
+.delete-key{
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    border: 2px solid blanchedalmond;
+    border-radius: 25px;
+    align-items: center;
+    font-family: 'PT Sans';
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 7px 7px 4px 7px;
 }
 
 .pt-sans-regular {
     font-family: "PT Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
+    align-items: center;
+    font-family: 'PT Sans';
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 7px 7px 4px 7px;
   }
   
   .pt-sans-bold {
