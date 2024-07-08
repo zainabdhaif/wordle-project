@@ -21,7 +21,7 @@ Pseudocode:
 ----------for the entire word and no. of guesses-------------------------------
 
 //IF the number of correct tiles = 5
-  //THEN display "genius! you guessed the word:) " message
+  //THEN display "genius! you guessed the word  " message
 //ELSE check the number of guesses left
   //IF the number of guesses is < 6
       //THEN the user will be allowed to enter a new guess
@@ -29,4 +29,17 @@ Pseudocode:
 
     
 
-    
+  ----------plan for me-------------------------------------------------
+
+
+  mon 8/7-
+1- create accepted words arrray
+2- create banned words array
+3- make the clicked letter box display the value of the alphabet key that is clicked, in-order
+so first key value is displayed in first box, and second key value is displayed in second box, and so on until the fifth box
+after all the boxes are filled, AND user clicks enter, check if entered word is part of banned words array or not
+if do not display or change anything (neither letter box colors or alphabet keys chosen colors)
+else compare each letter with letter of same position in word of the day, if it matches make letter box green AND alphabet key green
+
+else compare the letter with the rest of the letters of the word, if it finds a match make letter box yellow AND alphabet key yellow
+else make both letter box and alphabet key grey

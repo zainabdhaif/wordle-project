@@ -1,8 +1,7 @@
-//step1: add a words array to store all the possible words
-//step2: have a banned words array that includes all the words that cannot be entered
-//step3: add the visual alphabets for inputs
-//step4: somehow make the letter-boxes accept and show the input from the alphabets clicked
-//
+//1- create accepted words arrray
+//2- create banned words array
+//3- make the clicked letter box display the value of the alphabet key that is clicked, in-order
+//in 
 
 const keys = document.querySelectorAll(".letter-key");
 const letterBox = document.querySelectorAll(".letter-box");
