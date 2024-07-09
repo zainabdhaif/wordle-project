@@ -29,15 +29,30 @@ enterKey.addEventListener("click", event => {
         // console.log ("enter key is clicked");
             for (i=0; i<wordOfTheDay.length; i++){
                 if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
-                    console.log('the letters are matching');
-                    // letterBox[i].
+                    // keys[i].style.backgroundColor = "green";
+                    // letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
                 }
                 else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
                 || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
                 || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
                 || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
-                ||letterBox[i].innerText === wordOfTheDay.charAt(i+5)){
-                    console.log('letter exists in the word but not in the right position');
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                // keys[i].style.backgroundColor = "yellow";
+                // letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    // keys[i].style.backgroundColor = "grey";
+                    // letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
                 }
         }
     }
