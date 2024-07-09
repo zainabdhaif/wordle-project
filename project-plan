@@ -34,7 +34,11 @@ Pseudocode:
 
   mon 8/7-
 1- create accepted words arrray
-2- create banned words array
+2- create banned words array -- this whole idea will be banned, because validating words based on their existence in 
+the "bad words" array will be unnecessary and might create awkward situations for everyone
+
+we will only wait until user clickes enter then the whole word will be evaluated as a whole 
+
 3- make the clicked letter box display the value of the alphabet key that is clicked, in-order
 so first key value is displayed in first box, and second key value is displayed in second box, and so on until the fifth box
 after all the boxes are filled, AND user clicks enter, check if entered word is part of banned words array or not
@@ -43,3 +47,5 @@ else compare each letter with letter of same position in word of the day, if it 
 
 else compare the letter with the rest of the letters of the word, if it finds a match make letter box yellow AND alphabet key yellow
 else make both letter box and alphabet key grey
+
+now: make clicked alphabet show up in letter box
