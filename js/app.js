@@ -1,199 +1,145 @@
-//1- create accepted words arrray
-//2- create banned words array
-//3- make the clicked letter box display the value of the alphabet key that is clicked, in-order
-//in 
+const words = ["hello"];
 
 const keys = document.querySelectorAll(".letter-key");
 const letterBox = document.querySelectorAll(".letter-box");
+const enterKey = document.querySelector(".enter-key");
+const deleteKey = document.querySelector(".delete-key");
+
+let wordOfTheDay = words[0];
+
+//let user enter word in boxes
+//when user clicks enter each letter is compared 
+    //cannot enter if there is an empty letter-box
+//after all the comparisons are finished we can add input to the next row
+//if user clicks delete before enter is clicked, delete the last value
+
+let noOfGuesses = 2;
+let enterClicked = false;
+let emptyBoxes = 0;
+let keyValue = '';
 
 
 
-let keyValue ='';
-let letterBoxValue = '';
-let rowNum = 0;
-let letterBoxNum = 0;
-let noOfGuesses = 0;
+enterKey.addEventListener("click", event => {
+    if (event.target.className === "enter-key" && emptyBoxes === 0){
+        enterClicked = true;
+        console.log ("enter key is clicked");
+        let enterClickedCount = 1;
+        if (enterClickedCount === 1){
+            //do everything
+        }
+        else{
+            return;
+            //this is done to ensure that the process of showing the answer is not repeated as many times
+            //as the user is clicking the enter value, it is shown only once
+        }
+    }
 
-// if (noOfGuesses === 0){
-//     const rowNow = document.querySelector("#first-row");
-//     keys.forEach((key) =>{
-//                 key.addEventListener("click", event =>{
-//                     keyValue = event.target.innerHTML;
-//                     for (i =0; i<5; i++){
+    else if (event.target.className === "enter-key" && emptyBoxes !== 0){
+        return;
+        //basically do nothing since there are empty boxes 
+        //so we cannot enter any values
+    }
+}
 
-//                             letterBox[i].innerText= keyValue;
+);
+
+let counterKey = 0;
+keys.forEach((key) => {
+    key.addEventListener("click", event => {
+        keyValue = event.target.innerHTML;
         
-//                     }
-                    
-//                 })
-//             })
-    
+        for (i=0; i<5;i++){
+            switch (noOfGuesses){
+                case 0:
+                    makeAWord1(keyValue);
+                    break;
+                case 1:
+                    makeAWord2(keyValue);
+                    break;
+                case 2:
+                    makeAWord3(keyValue);
+                    break;
+                case 3:
+                    makeAWord4(keyValue);
+                    break;
+                case 4:
+                    makeAWord5(keyValue);
+                    break;
+                case 5:
+                    makeAWord6(keyValue);
+                    break;
+                default:
+                    break;
+            }
+           
+            console.log(`first counterKey inner ${counterKey}`)};
+            counterKey++;
+           
+           
+    })
 
-// }
-// else if (noOfGuesses === 1){
-//     const rowNow = document.querySelector("#second-row");
-// }
-// else if (noOfGuesses === 2){
-//     const rowNow = document.querySelector("#third-row");
-// }
-// else if (noOfGuesses === 3){
-//     const rowNow = document.querySelector("#fourth-row");
-// }
-// else if (noOfGuesses === 4){
-//     const rowNow = document.querySelector("#fifth-row");
-// }
-// else if (noOfGuesses === 5){
-//     const rowNow = document.querySelector("#sixth-row");
-// }
+})
+console.log(`first counterKey outer ${counterKey}`);
 
+function makeAWord1 (word){
+    if (counterKey <=4){
+        letterBox[counterKey].innerText = word;
 
-
-// if (rowNum === 0 && letterBoxNum === 0 && noOfGuesses === 0){
-//     letterBoxNum=1;
-//     keys.forEach((key) =>{
-//         key.addEventListener('click', event => {
-//             if (event.target.className === "letter-key"){
-//                 keyValue = event.target.innerHTML;
-//                 console.log(`alphabet key is clicked ${keyValue}`);
-
-//                 letterBox.forEach((LB)=>{
-//                     LB.addEventListener("click", event =>{
-//                         if (event.target.classList.contains('first')){
-//                             LB.innerText = keyValue;
-//                         }
-//                         else if (event.target.classList.contains('second')){
-//                             console.log("clicked second letter box");
-//                             LB.innerText = keyValue;
-//                         }
-//                         else if (event.target.classList.contains('third')){
-//                             console.log("clicked third letter box");
-//                             LB.innerText = keyValue;
-//                         }
-//                         else if (event.target.classList.contains('fourth')){
-//                             console.log("clicked fourth letter box");
-//                             LB.innerText = keyValue;
-//                         }
-//                         else if (event.target.classList.contains('fifth')){
-//                             console.log("clicked fifth letter box");
-//                             LB.innerText = keyValue;
-//                         }
-//                     })
-//                 })
-                
-//             }
-//         }
-//     )
-
-// })};
-
-
-let counter = 0;
-//first guess
-if (noOfGuesses === 0){
-    rowNum = 1;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=3){
-                        
-                        letterBox[counter].innerText= keyValue;
-                       
-                    }
-                    counter++;
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 1;   
+        
+    }
+    else {
+        
+        return;
+    }    
 }
 
-//secondd guess
-if (noOfGuesses === 1){
-    rowNum = 2;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter>4 && counter<=8){
-                        letterBox[counter].innerText= keyValue;
-                        counter++;
-                    }
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 2;   
+function makeAWord2 (word){
+    if (counterKey <=9 && counterKey>=5){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
 
-//third guess
-if (noOfGuesses === 2){
-    rowNum = 3;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=12 && counter>8){
-                        letterBox[counter].innerText= keyValue;
-                        counter++;
-                    }
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 3;   
+function makeAWord3 (word){
+    if (counterKey <=14 && counterKey>=10){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
 
-//fourth guess
-if (noOfGuesses === 3){
-    rowNum = 4;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=16 && counter>12){
-                        letterBox[counter].innerText= keyValue;
-                        counter++;
-                    }
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 4;   
+function makeAWord4 (word){
+    if (counterKey <=19 && counterKey>=15){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
 
-//fifth guess
-if (noOfGuesses === 4){
-    rowNum = 5;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=20 && counter>16){
-                        letterBox[counter].innerText= keyValue;
-                        counter++;
-                    }
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 5;   
+function makeAWord5 (word){
+    if (counterKey <=24 && counterKey>=20){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
 
-//sixth guess
-if (noOfGuesses === 5){
-    rowNum = 6;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
-
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=24 && counter>20){
-                        letterBox[counter].innerText= keyValue;
-                        counter++;
-                    }
-                    console.log(counter);
-        })
-      })
-      console.log('no more chances, sorry!!')  
+function makeAWord6 (word){
+    if (counterKey <=29 && counterKey>=25){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
