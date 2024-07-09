@@ -1,6 +1,6 @@
 const words = ["hello"];
 
-const keys = document.querySelectorAll(".letter-keys");
+const keys = document.querySelectorAll(".letter-key");
 const letterBox = document.querySelectorAll(".letter-box");
 const enterKey = document.querySelector(".enter-key");
 const deleteKey = document.querySelector(".delete-key");
@@ -13,15 +13,12 @@ let wordOfTheDay = words[0];
 //after all the comparisons are finished we can add input to the next row
 //if user clicks delete before enter is clicked, delete the last value
 
-let noOfGuesses = 0;
+let noOfGuesses = 2;
 let enterClicked = false;
 let emptyBoxes = 0;
 let keyValue = '';
 
 
-if (noOfGuesses === 0){
-
-}
 
 enterKey.addEventListener("click", event => {
     if (event.target.className === "enter-key" && emptyBoxes === 0){
@@ -47,23 +44,102 @@ enterKey.addEventListener("click", event => {
 
 );
 
-let counter = 0;
-//first guess
-if (noOfGuesses === 0){
-    rowNum = 1;
-        keys.forEach((key) =>{
-            key.addEventListener("click", event =>{
+let counterKey = 0;
+keys.forEach((key) => {
+    key.addEventListener("click", event => {
+        keyValue = event.target.innerHTML;
+        
+        for (i=0; i<5;i++){
+            switch (noOfGuesses){
+                case 0:
+                    makeAWord1(keyValue);
+                    break;
+                case 1:
+                    makeAWord2(keyValue);
+                    break;
+                case 2:
+                    makeAWord3(keyValue);
+                    break;
+                case 3:
+                    makeAWord4(keyValue);
+                    break;
+                case 4:
+                    makeAWord5(keyValue);
+                    break;
+                case 5:
+                    makeAWord6(keyValue);
+                    break;
+                default:
+                    break;
+            }
+           
+            console.log(`first counterKey inner ${counterKey}`)};
+            counterKey++;
+           
+           
+    })
 
-                    keyValue = event.target.innerHTML;
-                    
-                    if (counter<=3){
-                        
-                        letterBox[counter].innerText= keyValue;
-                       
-                    }
-                    counter++;
-                    console.log(counter);
-        })
-      })
-    noOfGuesses= 1;   
+})
+console.log(`first counterKey outer ${counterKey}`);
+
+function makeAWord1 (word){
+    if (counterKey <=4){
+        letterBox[counterKey].innerText = word;
+
+        
+    }
+    else {
+        
+        return;
+    }    
+}
+
+function makeAWord2 (word){
+    if (counterKey <=9 && counterKey>=5){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
+}
+
+function makeAWord3 (word){
+    if (counterKey <=14 && counterKey>=10){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
+}
+
+function makeAWord4 (word){
+    if (counterKey <=19 && counterKey>=15){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
+}
+
+function makeAWord5 (word){
+    if (counterKey <=24 && counterKey>=20){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
+}
+
+function makeAWord6 (word){
+    if (counterKey <=29 && counterKey>=25){
+        letterBox[counterKey].innerText = word;
+        
+    }
+    else {
+        return;
+    }    
 }
