@@ -1,11 +1,15 @@
-const words = ["hello"];
+
+
+//////////after the words
 
 const keys = document.querySelectorAll(".letter-key");
+
 const letterBox = document.querySelectorAll(".letter-box");
 const enterKey = document.querySelector(".enter-key");
 const deleteKey = document.querySelector(".delete-key");
 
-let wordOfTheDay = words[0];
+// const wordOfTheDay = wordlist[Math.floor(Math.random()* wordlist.length)];
+const wordOfTheDay = "PAINS";
 
 //let user enter word in boxes
 //when user clicks enter each letter is compared 
@@ -13,34 +17,75 @@ let wordOfTheDay = words[0];
 //after all the comparisons are finished we can add input to the next row
 //if user clicks delete before enter is clicked, delete the last value
 
-let noOfGuesses = 2;
+//validate each word after enter is clicked
+//fix the no. of guesses problem
+
+
+let noOfGuesses = 0;
 let enterClicked = false;
 let emptyBoxes = 0;
 let keyValue = '';
+let enteredWord = [];
 
 
+deleteKey.addEventListener("click", event => {
+    if (enterClicked === false){
+        let lastNonEmptyIndex = -1;
+        for (let i = 0; i < letterBox.length; i++) {
+          if (letterBox[i].innerText !== "") {
+            lastNonEmptyIndex = i;
+          }
+        }
+      
+        // If there are any non-empty letter boxes, clear the last one
+        if (lastNonEmptyIndex !== -1) {
+          letterBox[lastNonEmptyIndex].innerText = "";
+          keys[lastNonEmptyIndex].style.backgroundColor = "";
+          letterBox[lastNonEmptyIndex].style.backgroundColor = "";
+          counterKey--;
+        }
+    }
+    // Get the index of the last non-empty letter box
+    
+  });
+  
 
 enterKey.addEventListener("click", event => {
-    if (event.target.className === "enter-key" && emptyBoxes === 0){
         enterClicked = true;
-        console.log ("enter key is clicked");
-        let enterClickedCount = 1;
-        if (enterClickedCount === 1){
-            //do everything
+        // console.log ("enter key is clicked");
+            for (i=0; i<wordOfTheDay.length; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    
+                    keys[i].style.backgroundColor = "green";
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                keys[i].style.backgroundColor = "yellow";
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    keys[i].style.backgroundColor = "grey";
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
         }
-        else{
-            return;
-            //this is done to ensure that the process of showing the answer is not repeated as many times
-            //as the user is clicking the enter value, it is shown only once
-        }
+    
+    enterClicked= false;
+    noOfGuesses++;
     }
-
-    else if (event.target.className === "enter-key" && emptyBoxes !== 0){
-        return;
-        //basically do nothing since there are empty boxes 
-        //so we cannot enter any values
-    }
-}
 
 );
 
@@ -50,9 +95,12 @@ keys.forEach((key) => {
         keyValue = event.target.innerHTML;
         
         for (i=0; i<5;i++){
+            
             switch (noOfGuesses){
                 case 0:
                     makeAWord1(keyValue);
+                  
+                   
                     break;
                 case 1:
                     makeAWord2(keyValue);
@@ -71,22 +119,17 @@ keys.forEach((key) => {
                     break;
                 default:
                     break;
-            }
-           
-            console.log(`first counterKey inner ${counterKey}`)};
+            }};
             counterKey++;
            
            
     })
 
-})
-console.log(`first counterKey outer ${counterKey}`);
+});
 
 function makeAWord1 (word){
     if (counterKey <=4){
         letterBox[counterKey].innerText = word;
-
-        
     }
     else {
         
@@ -97,7 +140,7 @@ function makeAWord1 (word){
 function makeAWord2 (word){
     if (counterKey <=9 && counterKey>=5){
         letterBox[counterKey].innerText = word;
-        
+      
     }
     else {
         return;
