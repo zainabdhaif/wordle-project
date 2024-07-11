@@ -7,41 +7,22 @@ SPOILER: very hard..
 
 ## 1. Start Page
 
-![adding picture test]()
-```javascript
-const perfectSandiwch = (GoodIngredients) => {
-  // whatever your heart desires
-}
-```
+![adding picture test](./1.png)
 
-### quality ingredients includes:
-* **good bread**: good bread makes or breaks a sandwich.
-* **a fresh protein**: adding protein is important for the gains 
-* **good cutting knife**: good kitchen knife can make the process of preparing a sandwich smoother
-* **fresh vegetables**: fresh vegetables add great texture
+this is what the user sees upon opening the game. The user gets 6 tries to guess the word of the day. The user gets to see if the letter entered is correct or not based on the color of the tiles.
+
+## 2. Adding a word
+
+![adding picture test](./2.png)
+
+After choosing the letter from the alphabets below and pressing enter, the tiles change color based on the "correctness" of each letter. A green tile indicates correct letter and position, a yellow tile indicates a correct letter but not position and a grey tile indicates an incorrect letter.
 
 
- > Tip: Searing your sandwich in butter and lightly toasting it in a pan would make any sandwich a 10/10. 
 
-## 2. Adding a vegetable
+## 3. Guessing the word correctly
 
-People usually forget that sandwiches can include vegetables which can add a lot of color and texture to a sandich.
+![adding picture test](./3.png)
 
-***Example:***
+If all the letters turn green, then this means the user guessed the word correctly!!
 
-1. adding some fresh romaine lettuce
-2. adding some pickles
-3. adding fresh or roasted tomatoes
-
-
-## 3. Using Sauces and Spreads
-
-Sauces and spreads can add a lot of flavor with a simple addition. 
-
-***Example:*** 
-
-1.A pesto spread is lovely with mozerella and tomatoes
-2.Peanut butter and jam is always a good combo
-3.some light honey can add some definition to most sandwiches
-
-For more delicious sandwich recipes, check ou this [website](https://www.bbcgoodfood.com/howto/guide/how-to-make-the-perfect-sandwich). 
+To try out the game click [here](). 
