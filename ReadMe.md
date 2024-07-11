@@ -25,4 +25,10 @@ After choosing the letter from the alphabets below and pressing enter, the tiles
 
 If all the letters turn green, then this means the user guessed the word correctly!!
 
+## Future enhancments
+
+* Showing the correct word if the user finishes his attempts without guessing the word correctly.
+* Enhancing the CSS and making the page more responsive.
+* Increasing the number of word in the possible words array.
+
 To try out the game click [here](https://zainabdhaif.github.io/wordle-project/). 
