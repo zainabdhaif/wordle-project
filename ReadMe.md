@@ -25,4 +25,4 @@ After choosing the letter from the alphabets below and pressing enter, the tiles
 
 If all the letters turn green, then this means the user guessed the word correctly!!
 
-To try out the game click [here](). 
+To try out the game click [here](https://zainabdhaif.github.io/wordle-project/). 
