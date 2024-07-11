@@ -1,24 +1,15 @@
 
 
-//////////after the words
-
 const keys = document.querySelectorAll(".letter-key");
 
 const letterBox = document.querySelectorAll(".letter-box");
 const enterKey = document.querySelector(".enter-key");
 const deleteKey = document.querySelector(".delete-key");
+let wordlist = ["HAPPY", "FIRST", "TODAY"];
+const wordOfTheDay = wordlist[Math.floor(Math.random()* wordlist.length)];
 
-// const wordOfTheDay = wordlist[Math.floor(Math.random()* wordlist.length)];
-const wordOfTheDay = "PAINS";
 
-//let user enter word in boxes
-//when user clicks enter each letter is compared 
-    //cannot enter if there is an empty letter-box
-//after all the comparisons are finished we can add input to the next row
-//if user clicks delete before enter is clicked, delete the last value
 
-//validate each word after enter is clicked
-//fix the no. of guesses problem
 
 
 let noOfGuesses = 0;
@@ -52,11 +43,9 @@ deleteKey.addEventListener("click", event => {
 
 enterKey.addEventListener("click", event => {
         enterClicked = true;
-        // console.log ("enter key is clicked");
+        if (noOfGuesses === 0){
             for (i=0; i<wordOfTheDay.length; i++){
                 if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
-                    
-                    keys[i].style.backgroundColor = "green";
                     letterBox[i].style.backgroundColor = "green";
                     console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
                     
@@ -72,16 +61,164 @@ enterKey.addEventListener("click", event => {
                 || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
                 || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
             ){
-                keys[i].style.backgroundColor = "yellow";
                 letterBox[i].style.backgroundColor = "yellow";    
                 console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
                 }
                 else {
-                    keys[i].style.backgroundColor = "grey";
+                    
                     letterBox[i].style.backgroundColor = "grey";
                     console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
                 }
         }
+        }
+
+        if (noOfGuesses === 1){
+            for (i=5; i<=9; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
+        }
+        }
+
+        if (noOfGuesses === 2){
+            for (i=10; i<15; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
+        }
+        }
+
+        if (noOfGuesses === 3){
+            for (i=15; i<20; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
+        }
+        }
+
+        if (noOfGuesses === 4){
+            for (i=20; i<25; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
+        }
+        }
+
+        if (noOfGuesses === 5){
+            for (i=25; i<30; i++){
+                if (letterBox[i].innerText === wordOfTheDay.charAt(i)){
+                    letterBox[i].style.backgroundColor = "green";
+                    console.log(`the letters are matching in letter ${wordOfTheDay.charAt(i)}`);
+                    
+                }
+                else if (letterBox[i].innerText === wordOfTheDay.charAt(i+1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i+5)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-1)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-2)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-3)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-4)
+                || letterBox[i].innerText === wordOfTheDay.charAt(i-5)
+            ){
+                letterBox[i].style.backgroundColor = "yellow";    
+                console.log(`letter ${letterBox[i].innerText} exists in the word but not in the right position`);
+                }
+                else {
+                    
+                    letterBox[i].style.backgroundColor = "grey";
+                    console.log(`no letter matches the letter ${letterBox[i].innerText} entered in word of the day`);
+                }
+        }
+        }
+       
+
+        
     
     enterClicked= false;
     noOfGuesses++;
