@@ -1,4 +1,4 @@
-![adding picture test](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2022%2F01%2F31%2Fcrosswords%2Fnyt-wordle-purchase.html&psig=AOvVaw3xridoat9kb8SnZD4HeTqv&ust=1720766894003000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCX_K2ynocDFQAAAAAdAAAAABAE)
+![adding picture test](./wordle-art-mediumSquareAt3X.jpg)
 
 # WORDLE GAME CLONE
 
